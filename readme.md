@@ -15,3 +15,4 @@ For anyone that finds this useful or likes to geek out. This repo is a rewrite o
 
 ## Preview
 ![Imgur](https://i.imgur.com/Pqfjdhw.png)
+![Imgur](https://i.imgur.com/NBPdfCZ.png)
