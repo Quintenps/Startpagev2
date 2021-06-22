@@ -1,0 +1,9 @@
+.git
+/unused/*
+Dockerfile
+.DS_Store
+.gitignore
+README.md
+env.*
+config.json
+.idea/
