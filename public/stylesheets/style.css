@@ -24,6 +24,7 @@ a:hover {
 #container {
     display: flex;
     flex-direction: column;
+    padding:0 60px;
     max-width: 1140px;
     width: 100%;
 
@@ -80,12 +81,16 @@ li {
  */
 
 @media only screen and (max-width: 700px) {
+    #container {
+        padding:0 20px;
+    }
     body {
         align-items: normal;
         margin: 50px 0 0 0;
     }
     * {
         text-align: center;
+        line-height: 2rem;
     }
     #links {
         grid-column: 1;
