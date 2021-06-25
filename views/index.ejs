@@ -32,5 +32,21 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener('keypress', changeTheme);
+    let theme = localStorage.getItem("theme");
+
+    if(theme === "dark"){
+        document.documentElement.classList.toggle("dark-mode");
+    }
+
+    function changeTheme(e) {
+        if(e.code === "Minus"){
+            localStorage.setItem("theme", theme === "light" ? "dark" : "light");
+            document.documentElement.classList.toggle("dark-mode");
+            console.log(theme);
+        }
+    }
+</script>
 </body>
 </html>

@@ -4,7 +4,7 @@ For anyone that finds this useful or likes to geek out. This repo is a rewrite o
 
 ## Features
 - JSON Config file for RSS Links and Quicklinks
-- Light/Dark colorscheme (based on [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme))
+- Light & Dark colorscheme (Toggle with **minus** key) 
 - RSS Reader
 - Cron (node-schedule) and cache (node-cache)
 

@@ -5,6 +5,7 @@ html, body {
 }
 
 body {
+    transition: background-color 0.5s ease;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     background-color: #f7f3ee;
     display: flex;
@@ -142,13 +143,12 @@ li {
 --------------
  */
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #1f232f;
-    }
 
-    a {
-        color: #e3e3e3;
-        text-decoration: none;
-    }
+.dark-mode body {
+    background-color: #1f232f;
+}
+
+.dark-mode  a {
+    color: #e3e3e3;
+    text-decoration: none;
 }
