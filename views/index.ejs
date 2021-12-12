@@ -1,52 +1,97 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Startpage</title>
-    <link rel='stylesheet' href='/stylesheets/style.css'/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAQz3uAAsJCQA6DzYAEOf/ABPq+QAU6fsAg268AAUEBQACAgIART/wAAAPAgAJBAUAAgAGAAYCAgACBgcAGOryABPk/gACBQIADAMAAEg68wAkz9IA////AAAEAwAH6f8AAQIHACDg/wBBPPQAE+b/ABXm/wAn4vsAYlaDAAcBAgAE6f4AJl1pAAzq/AABAQEAlYHkAAkDBAAI5f8AAAMDAEFC5gAYAAQAAwMDAAoFBgA6JsAAQz3wAFQ0/QAU5f8AEAADABjl/wAV5PoAL6a+AAIBBgAS5f4AEAEAABTl/gALAgsABgABAA3l/QAHCg4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6AAAAAAAMAAAAAAAAABIAHBgfMhwcFC0AAAAAAA05IRwiJQMdMwEKFwAAAAAbARUdDwcOKBwvLgYAAAAAKQEVHBwcHBwaKjA8AAAAAAAeCwAcJxwcKwkQAAAAAAAgOwAWHBwcHRYANgAAAAAAAAAZABwcHBwAABwmAAAAAAAAHBwdHBwcHAQ4NBMAAAAAMREcHRwdHBwcIxwiLAAAAiIcBSIiIiIIAAAiACQAACQAIgAAAAAAAAAANTcAAAAAAAAAAAAAAAAAAAAAAAAACSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AADwDwAAwAcAAIAHAACAAwAAgAcAAIAHAACABwAAwAcAAMADAACAAQAAgAEAAIfhAACP+QAAn/8AAP//AAA="
-          rel="icon" type="image/x-icon"/>
-</head>
-<body>
-<div id="container">
-    <div id="links" class="row">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAQz3uAAsJCQA6DzYAEOf/ABPq+QAU6fsAg268AAUEBQACAgIART/wAAAPAgAJBAUAAgAGAAYCAgACBgcAGOryABPk/gACBQIADAMAAEg68wAkz9IA////AAAEAwAH6f8AAQIHACDg/wBBPPQAE+b/ABXm/wAn4vsAYlaDAAcBAgAE6f4AJl1pAAzq/AABAQEAlYHkAAkDBAAI5f8AAAMDAEFC5gAYAAQAAwMDAAoFBgA6JsAAQz3wAFQ0/QAU5f8AEAADABjl/wAV5PoAL6a+AAIBBgAS5f4AEAEAABTl/gALAgsABgABAA3l/QAHCg4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6AAAAAAAMAAAAAAAAABIAHBgfMhwcFC0AAAAAAA05IRwiJQMdMwEKFwAAAAAbARUdDwcOKBwvLgYAAAAAKQEVHBwcHBwaKjA8AAAAAAAeCwAcJxwcKwkQAAAAAAAgOwAWHBwcHRYANgAAAAAAAAAZABwcHBwAABwmAAAAAAAAHBwdHBwcHAQ4NBMAAAAAMREcHRwdHBwcIxwiLAAAAiIcBSIiIiIIAAAiACQAACQAIgAAAAAAAAAANTcAAAAAAAAAAAAAAAAAAAAAAAAACSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AADwDwAAwAcAAIAHAACAAwAAgAcAAIAHAACABwAAwAcAAMADAACAAQAAgAEAAIfhAACP+QAAn/8AAP//AAA="
+      rel="icon"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div id="container">
+      <div id="links" class="row">
         <% for (const [category] of Object.entries(config.links)){ %>
-            <div class="col">
-                <h2><%= category %></h2>
-                <ul>
-                    <% for (const [title, link] of Object.entries(config.links[category])){ %>
-                        <li><a href="<%- link %>"><%- title %></a></li>
-                    <% } %>
-                </ul>
-            </div>
-        <% } %>
-    </div>
-    <div class="row">
         <div class="col">
-            <h2>news</h2>
-            <ul id="rssItems">
-                <% rssItems.forEach(function(item){ %>
-                    <li><a href="<%- item.link %>"><%- item.title %></a></li>
-                <% }); %>
-            </ul>
+          <h2><%= category %></h2>
+          <ul>
+            <% for (const [title, link] of
+            Object.entries(config.links[category])){ %>
+            <li><a href="<%- link %>"><%- title %></a></li>
+            <% } %>
+          </ul>
         </div>
+        <% } %>
+      </div>
+      <div id="rss" class="row">
+        <div class="col">
+          <h2>news</h2>
+          <ul id="rssItems">
+            <% rssItems.forEach(function(item){ %>
+            <li><a href="<%- item.link %>"><%- item.title %></a></li>
+            <% }); %>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <small id="showNotesButton" onclick="showNotes()">Notes</small>
+          <small
+            id="saveNotesButton"
+            onclick="saveNotes()"
+            style="display: none"
+            >Save</small
+          >
+          <p id="notesMessage">Saved!</p>
+          <textarea id="noteArea" style="display: none"></textarea>
+        </div>
+      </div>
     </div>
-</div>
-<script>
-    document.addEventListener('keypress', changeTheme);
-    let theme = localStorage.getItem("theme");
+    <script>
+      document.addEventListener("keypress", changeTheme);
 
-    if(theme === "dark"){
+      let links = document.getElementById("links");
+      let rss = document.getElementById("rss");
+      let notesArea = document.getElementById("noteArea");
+      let noteSaveButton = document.getElementById("saveNotesButton");
+      let notesMessage = document.getElementById("notesMessage");
+      let theme = localStorage.getItem("theme");
+      let notes = localStorage.getItem("notes");
+
+      notesArea.value = notes;
+
+      if (theme === "dark") {
         document.documentElement.classList.toggle("dark-mode");
-    }
+      }
 
-    function changeTheme(e) {
-        if(e.code === "Minus"){
-            localStorage.setItem("theme", theme === "light" ? "dark" : "light");
-            document.documentElement.classList.toggle("dark-mode");
-            console.log(theme);
+      function changeTheme(e) {
+        if (e.code === "Minus" && document.activeElement !== notesArea) {
+          localStorage.setItem("theme", theme === "light" ? "dark" : "light");
+          document.documentElement.classList.toggle("dark-mode");
+          console.log(theme);
         }
-    }
-</script>
-</body>
+      }
+      function showNotes() {
+        links.style.display = (links.dataset.toggled ^= 1) ? "none" : "grid";
+        rss.style.display = (rss.dataset.toggled ^= 1) ? "none" : "grid";
+
+        notesArea.style.display = (notesArea.dataset.toggled ^= 1)
+          ? "block"
+          : "none";
+        noteSaveButton.style.display = (noteSaveButton.dataset.toggled ^= 1)
+          ? "inline"
+          : "none";
+      }
+      function saveNotes() {
+        notesMessage.style.display = "inline";
+        localStorage.setItem("notes", notesArea.value);
+        console.log("Saved note " + notesArea.value);
+        setTimeout(() => {
+          notesMessage.style.display = "none";
+        }, 2000);
+      }
+    </script>
+  </body>
 </html>

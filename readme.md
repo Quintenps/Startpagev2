@@ -7,6 +7,7 @@ For anyone that finds this useful or likes to geek out. This repo is a rewrite o
 - Light & Dark colorscheme (Toggle with **minus** key) 
 - RSS Reader
 - Cron (node-schedule) and cache (node-cache)
+- Notes
 
 ## Installation
 - Copy sample.config.json to config.json and configure it to your liking.
