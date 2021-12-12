@@ -50,7 +50,15 @@
       </div>
     </div>
     <script>
-      document.addEventListener("keypress", changeTheme);
+      document.addEventListener("keypress", function(e){
+        console.log(e.code)
+        if (e.code === "Minus" && document.activeElement !== notesArea){
+          changeTheme();
+        }
+        else if(e.code === "KeyN" && document.activeElement !== notesArea){
+          showNotes();
+        }
+      });
 
       let links = document.getElementById("links");
       let rss = document.getElementById("rss");
@@ -66,11 +74,17 @@
         document.documentElement.classList.toggle("dark-mode");
       }
 
-      function changeTheme(e) {
-        if (e.code === "Minus" && document.activeElement !== notesArea) {
+      function changeTheme() {
+        
           localStorage.setItem("theme", theme === "light" ? "dark" : "light");
           document.documentElement.classList.toggle("dark-mode");
           console.log(theme);
+        
+      }
+      function showNotesByKeypress(e){
+        console.log(e.code)
+        if(e.code === "n"){
+          showNotes()
         }
       }
       function showNotes() {
