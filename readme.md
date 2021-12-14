@@ -7,7 +7,7 @@ For anyone that finds this useful or likes to geek out. This repo is a rewrite o
 - Light & Dark colorscheme (Toggle with **minus** key) 
 - RSS Reader
 - Cron (node-schedule) and cache (node-cache)
-- Notes (Toggle with **N** key)
+- Notes (Press **N** key to show/hide, press **S** key to save)
 - No bloated css/js
 
 ## Installation

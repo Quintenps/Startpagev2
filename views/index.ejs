@@ -58,6 +58,9 @@
         else if(e.code === "KeyN" && document.activeElement !== notesArea){
           showNotes();
         }
+        else if(e.code === "KeyS" && document.activeElement !== notesArea){
+          saveNotes();
+        }
       });
 
       let links = document.getElementById("links");
