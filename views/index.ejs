@@ -9,105 +9,59 @@
       rel="icon"
       type="image/x-icon"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cousine&display=swap" rel="stylesheet">
   </head>
   <body>
     <div id="container">
-      <div id="links" class="row">
-        <% for (const [category] of Object.entries(config.links)){ %>
-        <div class="col">
-          <h2><%= category %></h2>
-          <ul>
-            <% for (const [title, link] of
-            Object.entries(config.links[category])){ %>
-            <li><a href="<%- link %>"><%- title %></a></li>
-            <% } %>
-          </ul>
+      <div id="main" class="row">
+        <div id="links">
+          <% for (const [category] of Object.entries(config.links)){ %>
+          <div class="col">
+            <h2><%= category %></h2>
+            <ul>
+              <% for (const [title, link] of
+              Object.entries(config.links[category])){ %>
+              <li><a href="<%- link %>"><%- title %></a></li>
+              <% } %>
+            </ul>
+          </div>
+          <% } %>
         </div>
-        <% } %>
+        <div id="art">
+          <img src="<%= config.image %>" id="artObjectImage" class="fade-in" />
+        </div>
       </div>
       <div id="rss" class="row">
-        <div class="col">
-          <h2>news</h2>
-          <ul id="rssItems">
+        <h2>news</h2>
+        <div id="rssItems">
+          <ul>
             <% rssItems.forEach(function(item){ %>
             <li><a href="<%- item.link %>"><%- item.title %></a></li>
             <% }); %>
           </ul>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <small id="showNotesButton" onclick="showNotes()">Notes</small>
-          <small
-            id="saveNotesButton"
-            onclick="saveNotes()"
-            style="display: none"
-            >Save</small
-          >
-          <p id="notesMessage">Saved!</p>
-          <textarea id="noteArea" style="display: none"></textarea>
-        </div>
-      </div>
     </div>
     <script>
-      document.addEventListener("keypress", function(e){
-        console.log(e.code)
-        if (e.code === "Minus" && document.activeElement !== notesArea){
+      document.addEventListener("keypress", function (e) {
+        if (e.code === "Minus") {
           changeTheme();
-        }
-        else if(e.code === "KeyN" && document.activeElement !== notesArea){
-          showNotes();
-        }
-        else if(e.code === "KeyS" && document.activeElement !== notesArea){
-          saveNotes();
         }
       });
 
       let links = document.getElementById("links");
       let rss = document.getElementById("rss");
-      let notesArea = document.getElementById("noteArea");
-      let noteSaveButton = document.getElementById("saveNotesButton");
-      let notesMessage = document.getElementById("notesMessage");
       let theme = localStorage.getItem("theme");
-      let notes = localStorage.getItem("notes");
-
-      notesArea.value = notes;
 
       if (theme === "dark") {
         document.documentElement.classList.toggle("dark-mode");
       }
 
       function changeTheme() {
-        
-          localStorage.setItem("theme", theme === "light" ? "dark" : "light");
-          document.documentElement.classList.toggle("dark-mode");
-          console.log(theme);
-        
-      }
-      function showNotesByKeypress(e){
-        console.log(e.code)
-        if(e.code === "n"){
-          showNotes()
-        }
-      }
-      function showNotes() {
-        links.style.display = (links.dataset.toggled ^= 1) ? "none" : "grid";
-        rss.style.display = (rss.dataset.toggled ^= 1) ? "none" : "grid";
-
-        notesArea.style.display = (notesArea.dataset.toggled ^= 1)
-          ? "block"
-          : "none";
-        noteSaveButton.style.display = (noteSaveButton.dataset.toggled ^= 1)
-          ? "inline"
-          : "none";
-      }
-      function saveNotes() {
-        notesMessage.style.display = "inline";
-        localStorage.setItem("notes", notesArea.value);
-        console.log("Saved note " + notesArea.value);
-        setTimeout(() => {
-          notesMessage.style.display = "none";
-        }, 2000);
+        localStorage.setItem("theme", theme === "light" ? "dark" : "light");
+        document.documentElement.classList.toggle("dark-mode");
       }
     </script>
   </body>

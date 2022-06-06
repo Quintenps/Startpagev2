@@ -14,7 +14,8 @@ try {
     config = JSON.parse(read);
     cache.save("config", config, 0)
 } catch (e) {
-    throw new Error("config.json not found or couldn't be parsed, did you rename sample.config.json to config.json?")
+    console.log(e)
+    throw new Error("config.json not found or couldn't be parsed, did you copy sample.config.json to config.json?")
 }
 
 cron.scheduleCron()

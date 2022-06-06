@@ -10,26 +10,19 @@
       "LET": "//lowendtalk.com",
       "GHT": "//github.com/trending",
       "LSF": "//reddit.com/r/livestreamfail",
-      "Twitter": "//twitter.com",
-      "/fit/": "//4channel.org/fit/catalog",
-      "/g/": "//4channel.org/g/catalog",
-      "FP": "https://forum.facepunch.com/"
+      "Twitter": "//twitter.com"
     },
     "other": {
       "WAPP": "//web.whatsapp.com",
       "MFP": "//www.myfitnesspal.com/food/diary",
-      "WSS": "https://docs.google.com/spreadsheets/d/1P4FO7s7IJjpmUKh3fzAijagmd-qPwu1LNcJf9_tv51U/",
-      "OWArcade": "//overwatcharcade.today",
-      "MRvote": "https://mapleroyals.com/?page=vote",
-      "MRStats": "https://mapleroyals.quinten.dev/"
+      "OWArcade": "//overwatcharcade.today"
     },
     "work": {
-      "SYD": "https://conclusionfutureit.sharepoint.com/sites/StartYourDay",
-      "Excellence": "https://63159.afasinsite.nl/",
       "Outlook": "https://outlook.office365.com/owa/",
       "Calendar": "https://outlook.office365.com/calendar/view/month"
     }
   },
+  "image": "images/pokemon/ghastly.gif",
   "rss": [
     "https://www.security.nl/rss/headlines.xml",
     "https://news.ycombinator.com/rss",
