@@ -5,18 +5,19 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "scss": "sass --watch ./style.scss ./public/stylesheets/style.css"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "ejs": "^3.1.8",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "morgan": "~1.9.1",
+    "cookie-parser": "^1.4.6",
+    "debug": "^4.3.4",
+    "ejs": "^3.1.9",
+    "express": "^4.18.3",
+    "http-errors": "^2.0.0",
+    "morgan": "^1.10.0",
     "node-cache": "^5.1.2",
-    "node-schedule": "^2.0.0",
-    "redis": "^3.1.2",
-    "rss-parser": "^3.12.0"
+    "node-schedule": "^2.1.1",
+    "redis": "^4.6.13",
+    "rss-parser": "^3.13.0"
   }
 }

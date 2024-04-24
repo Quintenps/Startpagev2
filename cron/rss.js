@@ -24,11 +24,11 @@ module.exports = {
         }
 
         rssItems.sort(function(a, b) {
-            var c = new Date(a.pubDate);
-            var d = new Date(b.pubDate);
+            const c = new Date(a.pubDate);
+            const d = new Date(b.pubDate);
             return d-c;
         });
 
-        return rssItems.slice(0,10);
+        return rssItems.slice(0,18);
     }
 }

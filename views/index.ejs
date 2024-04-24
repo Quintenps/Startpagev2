@@ -1,68 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Startpage</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAQz3uAAsJCQA6DzYAEOf/ABPq+QAU6fsAg268AAUEBQACAgIART/wAAAPAgAJBAUAAgAGAAYCAgACBgcAGOryABPk/gACBQIADAMAAEg68wAkz9IA////AAAEAwAH6f8AAQIHACDg/wBBPPQAE+b/ABXm/wAn4vsAYlaDAAcBAgAE6f4AJl1pAAzq/AABAQEAlYHkAAkDBAAI5f8AAAMDAEFC5gAYAAQAAwMDAAoFBgA6JsAAQz3wAFQ0/QAU5f8AEAADABjl/wAV5PoAL6a+AAIBBgAS5f4AEAEAABTl/gALAgsABgABAA3l/QAHCg4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6AAAAAAAMAAAAAAAAABIAHBgfMhwcFC0AAAAAAA05IRwiJQMdMwEKFwAAAAAbARUdDwcOKBwvLgYAAAAAKQEVHBwcHBwaKjA8AAAAAAAeCwAcJxwcKwkQAAAAAAAgOwAWHBwcHRYANgAAAAAAAAAZABwcHBwAABwmAAAAAAAAHBwdHBwcHAQ4NBMAAAAAMREcHRwdHBwcIxwiLAAAAiIcBSIiIiIIAAAiACQAACQAIgAAAAAAAAAANTcAAAAAAAAAAAAAAAAAAAAAAAAACSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AADwDwAAwAcAAIAHAACAAwAAgAcAAIAHAACABwAAwAcAAMADAACAAQAAgAEAAIfhAACP+QAAn/8AAP//AAA="
-      rel="icon"
-      type="image/x-icon"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cousine&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="container">
-      <div id="main" class="row">
-        <div id="links">
-          <% for (const [category] of Object.entries(config.links)){ %>
-          <div class="col">
-            <h2><%= category %></h2>
-            <ul>
-              <% for (const [title, link] of
-              Object.entries(config.links[category])){ %>
-              <li><a href="<%- link %>"><%- title %></a></li>
-              <% } %>
-            </ul>
-          </div>
-          <% } %>
-        </div>
-        <div id="art">
-          <img src="<%= config.image %>" id="artObjectImage" class="fade-in" />
-        </div>
-      </div>
-      <div id="rss" class="row">
-        <h2>news</h2>
-        <div id="rssItems">
+
+<head>
+  <title>Startpage</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAQz3uAAsJCQA6DzYAEOf/ABPq+QAU6fsAg268AAUEBQACAgIART/wAAAPAgAJBAUAAgAGAAYCAgACBgcAGOryABPk/gACBQIADAMAAEg68wAkz9IA////AAAEAwAH6f8AAQIHACDg/wBBPPQAE+b/ABXm/wAn4vsAYlaDAAcBAgAE6f4AJl1pAAzq/AABAQEAlYHkAAkDBAAI5f8AAAMDAEFC5gAYAAQAAwMDAAoFBgA6JsAAQz3wAFQ0/QAU5f8AEAADABjl/wAV5PoAL6a+AAIBBgAS5f4AEAEAABTl/gALAgsABgABAA3l/QAHCg4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6AAAAAAAMAAAAAAAAABIAHBgfMhwcFC0AAAAAAA05IRwiJQMdMwEKFwAAAAAbARUdDwcOKBwvLgYAAAAAKQEVHBwcHBwaKjA8AAAAAAAeCwAcJxwcKwkQAAAAAAAgOwAWHBwcHRYANgAAAAAAAAAZABwcHBwAABwmAAAAAAAAHBwdHBwcHAQ4NBMAAAAAMREcHRwdHBwcIxwiLAAAAiIcBSIiIiIIAAAiACQAACQAIgAAAAAAAAAANTcAAAAAAAAAAAAAAAAAAAAAAAAACSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AADwDwAAwAcAAIAHAACAAwAAgAcAAIAHAACABwAAwAcAAMADAACAAQAAgAEAAIfhAACP+QAAn/8AAP//AAA="
+    rel="icon" type="image/x-icon" />
+</head>
+
+<body>
+  <img src="<%= config.image %>" id="art" alt="art">
+  <div id="container">
+    <div id="main">
+      <% for (const [category] of Object.entries(config.links)){ %>
+        <div>
+          <h2><%= category %></h2>
           <ul>
-            <% rssItems.forEach(function(item){ %>
-            <li><a href="<%- item.link %>"><%- item.title %></a></li>
-            <% }); %>
+            <% for (const [title, link] of Object.entries(config.links[category])){ %>
+              <a href="<%- link %>"><li><%- title %></li></a>
+              <% } %>
           </ul>
         </div>
-      </div>
+        <% } %>
     </div>
-    <script>
-      document.addEventListener("keypress", function (e) {
-        if (e.code === "Minus") {
-          changeTheme();
-        }
-      });
-
-      let links = document.getElementById("links");
-      let rss = document.getElementById("rss");
-      let theme = localStorage.getItem("theme");
-
-      if (theme === "dark") {
-        document.documentElement.classList.toggle("dark-mode");
+    <div id="rss">
+      <h2>news</h2>
+      <ul>
+        <% rssItems.forEach(function(item){ %>
+          <a href="<%- item.link %>"><li><%- item.title %></li></a>
+          <% }); %>
+      </ul>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("keypress", function (e) {
+      if (e.code === "Minus") {
+        changeTheme();
       }
+    });
 
-      function changeTheme() {
-        localStorage.setItem("theme", theme === "light" ? "dark" : "light");
-        document.documentElement.classList.toggle("dark-mode");
-      }
-    </script>
-  </body>
+    let links = document.getElementById("links");
+    let rss = document.getElementById("rss");
+    let theme = localStorage.getItem("theme");
+
+    if (theme === "dark") {
+      document.documentElement.classList.toggle("dark-mode");
+    }
+
+    function changeTheme() {
+      localStorage.setItem("theme", theme === "light" ? "dark" : "light");
+      document.documentElement.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+
 </html>
