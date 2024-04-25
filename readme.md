@@ -14,5 +14,5 @@ For anyone that finds this useful or likes to geek out. This repo is a rewrite o
 ` docker run --name startpage -v ${PWD}/config.json:/usr/src/app/config.json -p 80:3000 quintenps/startpage`
 
 ## Preview
-![Imgur](https://i.imgur.com/rbCfcyF.jpg)
-![Imgur](https://i.imgur.com/1NECuTk.jpg)
+![Imgur](https://imgur.com/cakw2ZL)
+![Imgur](https://imgur.com/uTqtLx2)
