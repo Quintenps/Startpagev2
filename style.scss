@@ -33,6 +33,7 @@ a {
   display: flex;
   flex-direction: row;
   max-width: 800px;
+  column-gap: 50px;
   width: 100%;
   justify-content: space-between;
 }
