@@ -29,7 +29,7 @@
       <h2>news</h2>
       <ul>
         <% rssItems.forEach(function(item){ %>
-          <a href="<%- item.link %>"><li><%- item.title %></li></a>
+          <a href="<%= item.link %>"><li><%= item.title %></li></a>
           <% }); %>
       </ul>
     </div>
