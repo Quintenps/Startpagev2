@@ -29,6 +29,6 @@ module.exports = {
             return d-c;
         });
 
-        return rssItems.slice(0,24);
+        return rssItems.slice(0,20);
     }
 }
